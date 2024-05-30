@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Mobil</title>
+    <link rel="stylesheet" type="text/css" href="../static/styles.css">
+</head>
+<body>
+    <h1>Tabel 1. Data Mobil</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Merek</th>
+                <th>Tipe</th>
+                <th>Harga (USD)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                <td>{{ row.id }}</td>
+                <td>{{ row.merek }}</td>
+                <td>{{ row.tipe }}</td>
+                <td>{{ row.harga_usd }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('add') }}">Tambah Data Baru</a>
+</body>
+</html>
